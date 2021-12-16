@@ -1,0 +1,67 @@
+Config {
+    font = "xft:WenQuanYi Zen Hei:size=9",
+    additionalFonts = [],
+    borderColor = "black",
+    border = TopB,
+    textOffset = -1,
+    iconOffset = -1,
+    lowerOnStart = True,
+    pickBroadest = False,
+    persistent = False,
+    hideOnStart = False,
+    iconRoot = ".",
+    allDesktops = False,
+    overrideRedirect = True,
+    alpha = 255,
+    bgColor = "#353945",
+    fgColor = "#ffffff",
+    -- position = TopW L 100,
+	position = Static { xpos = 0, ypos = 0, width = 1820, height = 20 },
+    sepChar = "%", -- delineator between plugin names and straight text
+    alignSep = "}{", -- separator between left-right alignment
+    template = "%StdinReader% }{ | %memory% | %multicpu% | %coretemp% | %dynnetwork% | %kbd% | %date% ",
+    commands = [
+        Run StdinReader, -- read data from xmonad
+        Run Memory [
+            "--template" ,"Mem: <usedratio>%",
+            "--Low", "20",
+            "--High", "90",
+            "--low", "green",
+            "--normal", "orange",
+            "--high", "red"
+        ] 60,
+		Run Date "%a %b %_d %H:%M" "date" 10,
+        Run Battery [
+            "-t", "<acstatus>: <left>% - <timeleft>",
+            "--", --"-c", "charge_full", "-O", "AC",
+            "-o", "Bat", "-h", "green", "-l", "red"
+        ] 60,
+        -- Run Cpu ["-L","3","-H","50", "--normal","green","--high","red"] 10
+		-- Run Weather "RJTT" [ "--template", "<skyCondition> | <fc=#4682B4><tempC></fc>°C | <fc=#4682B4><rh></fc>% | <fc=#4682B4><pressure></fc>hPa"] 36000,
+		Run DynNetwork [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
+                             , "--Low"      , "1000"       -- units: B/s
+                             , "--High"     , "5000"       -- units: B/s
+                             , "--low"      , "green"
+                             , "--normal"   , "orange"
+                             , "--high"     , "red"
+		] 10,
+		Run MultiCpu [ "--template" , "Cpu: <total0>%|<total1>%"
+                             , "--Low"      , "50"         -- units: %
+                             , "--High"     , "85"         -- units: %
+                             , "--low"      , "green"
+                             , "--normal"   , "orange"
+                             , "--high"     , "red"
+		] 10,
+        Run CoreTemp       [ "--template" , "Temp: <core0>°C|<core1>°C"
+                             , "--Low"      , "70"        -- units: °C
+                             , "--High"     , "80"        -- units: °C
+                             , "--low"      , "green"
+                             , "--normal"   , "orange"
+                             , "--high"     , "red"
+		] 50,
+		Run Kbd [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
+                , ("us"         , "<fc=yellow>US</fc>")
+		]	
+    ]
+}
+
