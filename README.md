@@ -1,0 +1,2 @@
+# myxmonad
+my xmonad configure
