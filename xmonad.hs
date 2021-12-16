@@ -6,6 +6,8 @@ import System.IO
 import XMonad
 import XMonad.Actions.GridSelect
 import XMonad.Actions.SpawnOn
+import XMonad.Config.Gnome
+import XMonad.Config.Xfce
 import XMonad.Config.Desktop
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
@@ -34,9 +36,9 @@ myManageHook = composeAll [
 myStartupHook = do
     setWMName "LG3D"
     spawnOnce "xcompmgr"
-    spawnOnce "volumeicon"
+--    spawnOnce "volumeicon"
     spawnOnce "nm-applet"
-    spawnOnce "redshift"
+--    spawnOnce "redshift"
 --    spawnOnce "ibus-daemon"
     spawnOnce "feh --bg-scale ~/.xmonad/background-xmonad.png"
     spawnOnce "flameshot gui"
