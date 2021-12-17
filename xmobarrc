@@ -45,7 +45,7 @@ Config {
             "-o", "Bat", "-h", "green", "-l", "red"
         ] 60,
         -- Run Cpu ["-L","3","-H","50", "--normal","green","--high","red"] 10
-		-- Run Weather "RJTT" [ "--template", "<skyCondition> | <fc=#4682B4><tempC></fc>°C | <fc=#4682B4><rh></fc>% | <fc=#4682B4><pressure></fc>hPa"] 36000,
+		-- Run Weather "RJTT" [ "--template", "<skyCondition> | <fc=#03DFFC><tempC></fc>°C | <fc=#03DFFC><rh></fc>% | <fc=#03DFFC><pressure></fc>hPa"] 36000,
 		Run DynNetwork [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
                              , "--Low"      , "1000"       -- units: B/s
                              , "--High"     , "5000"       -- units: B/s
@@ -67,7 +67,7 @@ Config {
                              , "--normal"   , "orange"
                              , "--high"     , "red"
 		] 50,
-        Run Weather "RCTP" [ "--template", "<skyCondition> | <fc=#4682B4><tempC></fc>°C | <fc=#4682B4><rh></fc>% | <fc=#4682B4><pressure></fc>hPa"] 36000,		
+        Run Weather "RCTP" [ "--template", "<skyCondition> | <fc=#03DFFC><tempC></fc>°C | <fc=#03DFFC><rh></fc>% | <fc=#03DFFC><pressure></fc>hPa"] 36000,		
 		Run Kbd [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
                 , ("us"         , "<fc=yellow>US</fc>")
 		]	
