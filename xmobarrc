@@ -19,7 +19,7 @@ Config {
 	position = Static { xpos = 0, ypos = 0, width = 1820, height = 20 },
     sepChar = "%", -- delineator between plugin names and straight text
     alignSep = "}{", -- separator between left-right alignment
-    template = "%StdinReader% }{ | %memory% | %multicpu% | %coretemp% | %dynnetwork% | %kbd% | %date% ",
+    template = "%StdinReader% }{ | %memory% | %swap% | %multicpu% | %coretemp% | %dynnetwork% | %RCTP% | %kbd% | <fc=#ee9a00>%date%</fc> ",
     commands = [
         Run StdinReader, -- read data from xmonad
         Run Memory [
@@ -30,6 +30,14 @@ Config {
             "--normal", "orange",
             "--high", "red"
         ] 60,
+		Run Swap [
+            "--template" ,"Swap: <usedratio>%",
+            "--Low", "20",
+            "--High", "90",
+            "--low", "green",
+            "--normal", "orange",
+            "--high", "red"
+		] 60,
 		Run Date "%a %b %_d %H:%M" "date" 10,
         Run Battery [
             "-t", "<acstatus>: <left>% - <timeleft>",
@@ -59,6 +67,7 @@ Config {
                              , "--normal"   , "orange"
                              , "--high"     , "red"
 		] 50,
+        Run Weather "RCTP" [ "--template", "<skyCondition> | <fc=#4682B4><tempC></fc>°C | <fc=#4682B4><rh></fc>% | <fc=#4682B4><pressure></fc>hPa"] 36000,		
 		Run Kbd [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
                 , ("us"         , "<fc=yellow>US</fc>")
 		]	
