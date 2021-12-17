@@ -51,7 +51,7 @@ Config {
                              , "--High"     , "5000"       -- units: B/s
                              , "--low"      , "green"
                              , "--normal"   , "orange"
-                             , "--high"     , "red"
+                             , "--high"     , "#EB34CF"
 		] 10,
 		Run MultiCpu [ "--template" , "Cpu: <total0>%|<total1>%"
                              , "--Low"      , "50"         -- units: %
