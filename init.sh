@@ -16,10 +16,11 @@
 xscreensaver -no-splash &
 
 # Power Management
-#xfce4-power-manager &
+xfce4-power-manager &
 
-#if [ -x /usr/bin/nm-applet ] ; then
-#   nm-applet --sm-disable &
-#fi
+if [ -x /usr/bin/nm-applet ] ; then
+   nm-applet --sm-disable &
+fi
+
 stalonetray &
 # exec xmonad

@@ -41,7 +41,7 @@ myStartupHook = do
 --    spawnOnce "redshift"
 --    spawnOnce "ibus-daemon"
     spawnOnce "feh --bg-scale ~/.xmonad/background-xmonad.png"
-    spawnOnce "flameshot gui"
+--    spawnOnce "flameshot gui"
 
 -- Define the names of all workspaces
 myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
@@ -72,7 +72,7 @@ myLogHook xmproc = dynamicLogWithPP $ xmobarPP {
 
 -- Define ShortCuts
 myShortCuts = [
-    ((mod4Mask, xK_l), spawn "slock"),
+    -- ((mod4Mask, xK_l), spawn "slock"),
     ((0, xF86XK_MonBrightnessUp), spawn "xbacklight +5"),
     ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -5"),
     -- browser: firefox
@@ -88,13 +88,13 @@ myShortCuts = [
     --((mod4Mask, xK_s), spawn "sleep 0.2; scrot -s"),
     -- DocViewer: zeal
     --((mod4Mask, xK_d), spawn "zeal"),
-    --((mod4Mask, xK_b), sendMessage ToggleStruts),
-    --((mod1Mask, xK_Tab), goToSelected def),
+    ((mod4Mask, xK_b), sendMessage ToggleStruts),
+    ((mod4Mask, xK_Tab), goToSelected def),
     -- alt+p, use dmenu
     -- rofi Run
     ((mod4Mask, xK_q), spawn "rofi -combi-modi window,drun,ssh -icon-theme 'Papirus' -show-icons -theme fancy -show combi"),
-	-- close window
-	((mod4Mask, xK_c), kill) -- %! Close the focused window
+    -- close window
+    ((mod4Mask, xK_c), kill) -- %! Close the focused window
     ]
 
 main = do
