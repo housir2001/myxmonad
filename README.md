@@ -22,3 +22,5 @@ sudo apt install libuv1-dev
 ./build.sh
 
 ```
+
+sudo cp config.ini.polybar /etc/polybar/config.ini 
