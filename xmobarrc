@@ -16,10 +16,11 @@ Config {
     bgColor = "#353945",
     fgColor = "#ffffff",
     -- position = TopW L 100,
-	position = Static { xpos = 0, ypos = 0, width = 1800, height = 20 },
+	position = Static { xpos = 0, ypos = 0, width = 1920, height = 20 },
     sepChar = "%", -- delineator between plugin names and straight text
     alignSep = "}{", -- separator between left-right alignment
-    template = "%StdinReader% }{ | %memory% | %swap% | %disku% | %multicpu% | %coretemp% | %dynnetwork% | %RCTP% | %kbd% | <fc=#ee9a00>%date%</fc> ",
+    -- template = "%StdinReader% }{ | %memory% | %swap% | %disku% | %multicpu% | %coretemp% | %dynnetwork% | %RCTP% | %kbd% | <fc=#ee9a00>%date%</fc> ",
+    template = "%StdinReader% }{ | %memory% | %swap% | %disku% | %multicpu% | %coretemp% | %dynnetwork% | %RCTP% | <fc=#ee9a00>%date%</fc> ",
     commands = [
         Run StdinReader, -- read data from xmonad
         Run Memory [
@@ -58,7 +59,7 @@ Config {
                              , "--high"     , "#EB34CF"
 		] 10,
 		-- Run MultiCpu [ "--template" , "Cpu: <total0>%|<total1>%"
-        Run MultiCpu [ "--template" , "Cpu: <total0>%%"
+        Run MultiCpu [ "--template" , "Cpu: <total0>%"
                              , "--Low"      , "50"         -- units: %
                              , "--High"     , "85"         -- units: %
                              , "--low"      , "green"
@@ -73,10 +74,9 @@ Config {
                              , "--normal"   , "orange"
                              , "--high"     , "red"
 		] 50,
-        Run Weather "RCTP" [ "--template", "<skyCondition> | <fc=#03DFFC><tempC></fc>°C | <fc=#03DFFC><rh></fc>% | <fc=#03DFFC><pressure></fc>hPa"] 36000,
-		Run Kbd [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
-                , ("us"         , "<fc=yellow>US</fc>")
-		]	
+        Run Weather "RCTP" [ "--template", "<skyCondition> | <fc=#03DFFC><tempC></fc>°C | <fc=#03DFFC><rh></fc>% | <fc=#03DFFC><pressure></fc>hPa"] 36000
+		-- Run Kbd [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
+        --        , ("us"         , "<fc=yellow>US</fc>")
+	    --]	
     ]
 }
-
