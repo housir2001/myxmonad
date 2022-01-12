@@ -22,6 +22,7 @@ import XMonad.Prompt.Shell
 import XMonad.Util.EZConfig (additionalKeys)
 import XMonad.Util.Run (spawnPipe)
 import XMonad.Util.SpawnOnce
+import XMonad.Util.Cursor
 import qualified Data.Map as M
 import qualified XMonad.StackSet as W
 
@@ -42,8 +43,8 @@ myStartupHook = do
 --    spawnOnce "redshift"
 --    spawnOnce "ibus-daemon"
     spawnOnce "feh --bg-scale ~/.xmonad/background-xmonad.png"
+    setDefaultCursor xC_left_ptr
 --    spawnOnce "flameshot gui"
-
 -- Define the names of all workspaces
 myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
