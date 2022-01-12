@@ -16,6 +16,7 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
 import XMonad.Layout.NoBorders
 import XMonad.Layout.PerWorkspace
+import XMonad.Layout.Maximize
 import XMonad.Prompt
 import XMonad.Prompt.Shell
 import XMonad.Util.EZConfig (additionalKeys)
@@ -92,7 +93,11 @@ myShortCuts = [
     ((mod4Mask, xK_Tab), goToSelected def),
     -- alt+p, use dmenu
     -- rofi Run
-    ((mod4Mask, xK_q), spawn "rofi -combi-modi window,drun,ssh -icon-theme 'Papirus' -show-icons -theme fancy -show combi"),
+    --((mod4Mask, xK_q), spawn "rofi -combi-modi window,drun,ssh -icon-theme 'Papirus' -show-icons -theme fancy -show combi"),
+    ((mod4Mask, xK_q), spawn "rofi -combi-modi window,drun,ssh -show-icons -show combi"),
+	((mod4Mask, xK_p), spawn "rofi -show power-menu -modi power-menu:rofi-power-menu"),
+    -- Max window
+    --((mod4Mask, xK_f), withFocused (sendMessage . maximizeRestore)),
     -- close window
     ((mod4Mask, xK_c), kill) -- %! Close the focused window
     ]
