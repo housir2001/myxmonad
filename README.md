@@ -24,3 +24,13 @@ sudo apt install libuv1-dev
 ```
 
 sudo cp config.ini.polybar /etc/polybar/config.ini 
+
+# Key binding
+
+- Alt+1...9 Switch desktop
+- Alt+p Show dmenu
+- Windows Key+TAB Show desktop toggle color block
+- Windows Key+b Hide/Show xmobar
+- Windows Key+q Show rofi application
+- Windows Key+p Show rofi power menu
+- Windows Key+c Close focus window
