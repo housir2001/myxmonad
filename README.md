@@ -29,6 +29,8 @@ sudo cp config.ini.polybar /etc/polybar/config.ini
 
 - Alt+1...9 Switch desktop
 - Alt+p Show dmenu
+- Alt+mouse left Move window
+- Alt+mouse right Change window size
 - Windows Key+TAB Show desktop toggle color block
 - Windows Key+b Hide/Show xmobar
 - Windows Key+q Show rofi application
