@@ -19,6 +19,8 @@ sudo apt install gcc clang
 sudo apt install sphinx-common
 sudo apt install libuv1-dev
 
+git clone https://github.com/polybar/polybar.git
+
 ./build.sh
 
 ```
