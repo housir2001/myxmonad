@@ -23,8 +23,6 @@ git clone https://github.com/polybar/polybar.git
 
 ./build.sh
 
-```
-
 cd ~/.xmonad
 sudo cp config.ini.polybar /etc/polybar/config.ini
 chmod a+x link.py
@@ -32,6 +30,8 @@ chmod a+x xmonad-x86_64-linux
 chmod a+x ycm_extra_conf.py
 chmod a+x rofi-power-menu
 sudo cp rofi-power-menu /usr/local/bin
+
+```
 
 # Key binding
 
