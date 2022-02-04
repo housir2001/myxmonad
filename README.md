@@ -4,7 +4,7 @@ my xmonad configure
 # xmonad install at ubuntu 20.04
 
 ```=
-sudo apt install xmonad libghc-xmonad-dev libghc-xmonad-contrib-dev xmobar xcompmgr nitrogen stalonetray moreutils synapse ssh-askpass-gnome suckless-tools rofi dmenu gmrun 
+sudo apt install xmonad libghc-xmonad-dev libghc-xmonad-contrib-dev xmobar xcompmgr nitrogen stalonetray moreutils synapse ssh-askpass-gnome suckless-tools rofi dmenu gmrun feh 
 sudo apt install libghc-xmonad-extras-dev libghc-xmonad-extras-prof libghc-xmonad-prof
 ```
 # polybar install @ ubuntu 20.04
@@ -25,7 +25,13 @@ git clone https://github.com/polybar/polybar.git
 
 ```
 
-sudo cp config.ini.polybar /etc/polybar/config.ini 
+cd ~/.xmonad
+sudo cp config.ini.polybar /etc/polybar/config.ini
+chmod a+x link.py
+chmod a+x xmonad-x86_64-linux
+chmod a+x ycm_extra_conf.py
+chmod a+x rofi-power-menu
+sudo cp rofi-power-menu /usr/local/bin
 
 # Key binding
 
