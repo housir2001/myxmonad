@@ -13,14 +13,21 @@
 #feh --bg-fill --no-fehbg ~/.xmonad/background-xmonad.png
 
 # Fire up screensaver
-xscreensaver -no-splash &
+# xscreensaver -no-splash &
 
 # Power Management
-xfce4-power-manager &
+# xfce4-power-manager &
 
 if [ -x /usr/bin/nm-applet ] ; then
    nm-applet --sm-disable &
 fi
 
-stalonetray &
+# stalonetray &
+
+volumeicon 2>/dev/null &
+
+blueman-applet 2>/dev/null &
+
+polybar 2>/dev/null &
+
 # exec xmonad
